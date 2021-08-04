@@ -6,11 +6,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:vstore_appl/data/services/my_firebase_auth.dart';
 import 'package:vstore_appl/main.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
 import 'package:vstore_appl/presentation/dialogs/progress_dialog.dart';
-import 'package:vstore_appl/presentation/value/statics.dart';
-import 'package:vstore_appl/services/my_firebase_auth.dart';
+import 'package:vstore_appl/constants/statics.dart';
 import '../../../data/models/profile_model.dart';
 import '../../widgets/my_custom_button.dart';
 

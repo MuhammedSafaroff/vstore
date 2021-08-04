@@ -5,7 +5,7 @@ import '../../../blocs/menu_selected_cubit/menu_selected_state.dart';
 import '../../../blocs/menu_selected_cubit/menu_selected_cubit.dart';
 import '../menu/menu.dart';
 
-import '../../value/statics.dart';
+import '../../../constants/statics.dart';
 
 class MenuDashboardLayout extends StatefulWidget {
   MenuDashboardLayout({Key key}) : super(key: key);

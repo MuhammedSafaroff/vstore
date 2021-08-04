@@ -4,9 +4,7 @@ import 'package:vstore_appl/blocs/profile_bloc/profile_cubit.dart';
 import 'package:vstore_appl/blocs/profile_bloc/profile_state.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
 import 'package:vstore_appl/presentation/page/have_a_market/widgets/no_store.dart';
-import 'package:vstore_appl/presentation/page/have_a_market/store_create_page.dart';
 import 'package:vstore_appl/presentation/page/have_a_market/widgets/there_is_store.dart';
-import 'package:vstore_appl/presentation/value/statics.dart';
 import '../../widgets/widget.dart';
 
 class HaveAMaket extends StatelessWidget {
@@ -77,9 +75,8 @@ class HaveAMaket extends StatelessWidget {
                               Navigator.of(context).pop();
                             },
                           ).platformCtrlDialog();
-
-                          return SizedBox.fromSize();
                         }
+                        return SizedBox.fromSize();
                       },
                     ),
                   ],

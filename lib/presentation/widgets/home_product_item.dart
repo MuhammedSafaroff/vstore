@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vstore_appl/data/my_list.dart';
-import 'package:vstore_appl/presentation/value/statics.dart';
+import 'package:vstore_appl/constants/statics.dart';
 
 class HomeProductItem extends StatelessWidget {
   final int index;

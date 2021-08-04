@@ -41,95 +41,93 @@ class _MyHomePageState extends State<MyHomePage> {
           borderRadius: widget.isCollapsed ? null : BorderRadius.circular(20),
           elevation: 8,
           color: Color(0xffF6F6F9),
-          child: Container(
-            child: Column(
-              children: [
-                MyAppBar(
-                  isCollapsed: widget.isCollapsed,
-                  menuOpen: widget.menuOpen,
-                ),
-                SizedBox(height: 12),
-                HomeSearchBar(
-                  labelTxt: "Describe Your Issue...",
-                  isCollapsed: widget.isCollapsed,
-                ),
-                SizedBox(height: 4),
-                Expanded(
-                  child: CustomScrollView(
-                    slivers: [
-                      SliverToBoxAdapter(
-                        //Slider
-                        child: HomeSlider(),
-                      ),
-                      SliverToBoxAdapter(
-                        //Elanlarin tipleri
-                        child: HomeAdType(
-                          name: "Vip Elanlar",
-                          margin: EdgeInsets.only(bottom: 10),
-                        ),
-                      ),
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 8),
-                        sliver: SliverGrid(
-                          delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                              //product items
-                              return HomeProductItem(
-                                index: index,
-                                isCollapsed: widget.isCollapsed,
-                              );
-                            },
-                            childCount: 8,
-                          ),
-                          gridDelegate:
-                              SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: widget.isCollapsed
-                                ? (screenWidth / 2)
-                                : screenWidth,
-                            mainAxisExtent: 240,
-                            mainAxisSpacing: 8.0,
-                            crossAxisSpacing: 8.0,
-                          ),
-                        ),
-                      ),
-                      SliverToBoxAdapter(
-                        //Elanlarin tipleri
-                        child: HomeAdType(
-                          name: "Yeni Məhsullar",
-                          margin: EdgeInsets.only(bottom: 10, top: 10),
-                        ),
-                      ),
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 8),
-                        sliver: SliverGrid(
-                          delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                              //product items
-                              return HomeProductItem(
-                                index: index,
-                                isCollapsed: widget.isCollapsed,
-                              );
-                            },
-                            childCount: 8,
-                          ),
-                          gridDelegate:
-                              SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: widget.isCollapsed
-                                ? (screenWidth / 2)
-                                : screenWidth,
-                            mainAxisExtent: 240,
-                            mainAxisSpacing: 8.0,
-                            crossAxisSpacing: 8.0,
-                          ),
-                        ),
-                      ),
-                    ],
+          child: LayoutBuilder(builder: (context, constraint) {
+            return Container(
+              child: Column(
+                children: [
+                  MyAppBar(
+                    isCollapsed: widget.isCollapsed,
+                    menuOpen: widget.menuOpen,
                   ),
-                ),
-                HomeBottomNavBar(),
-              ],
-            ),
-          ),
+                  SizedBox(height: 12),
+                  HomeSearchBar(
+                    labelTxt: "Describe Your Issue...",
+                    isCollapsed: widget.isCollapsed,
+                  ),
+                  SizedBox(height: 4),
+                  Expanded(
+                    child: CustomScrollView(
+                      slivers: [
+                        SliverToBoxAdapter(
+                          //Slider
+                          child: HomeSlider(),
+                        ),
+                        SliverToBoxAdapter(
+                          //Elanlarin tipleri
+                          child: HomeAdType(
+                            name: "Vip Elanlar",
+                            margin: EdgeInsets.only(bottom: 10),
+                          ),
+                        ),
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 8),
+                          sliver: SliverGrid(
+                            delegate: SliverChildBuilderDelegate(
+                              (BuildContext context, int index) {
+                                //product items
+                                return HomeProductItem(
+                                  index: index,
+                                  isCollapsed: widget.isCollapsed,
+                                );
+                              },
+                              childCount: 8,
+                            ),
+                            gridDelegate:
+                                SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: constraint.maxWidth / 2,
+                              mainAxisExtent: 240,
+                              mainAxisSpacing: 8.0,
+                              crossAxisSpacing: 8.0,
+                            ),
+                          ),
+                        ),
+                        SliverToBoxAdapter(
+                          //Elanlarin tipleri
+                          child: HomeAdType(
+                            name: "Yeni Məhsullar",
+                            margin: EdgeInsets.only(bottom: 10, top: 10),
+                          ),
+                        ),
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 8),
+                          sliver: SliverGrid(
+                            delegate: SliverChildBuilderDelegate(
+                              (BuildContext context, int index) {
+                                //product items
+                                return HomeProductItem(
+                                  index: index,
+                                  isCollapsed: widget.isCollapsed,
+                                );
+                              },
+                              childCount: 8,
+                            ),
+                            gridDelegate:
+                                SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: constraint.maxWidth / 2,
+                              mainAxisExtent: 240,
+                              mainAxisSpacing: 8.0,
+                              crossAxisSpacing: 8.0,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  HomeBottomNavBar(),
+                ],
+              ),
+            );
+          }),
         ),
       ),
     );

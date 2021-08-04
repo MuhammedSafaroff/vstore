@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vstore_appl/blocs/profile_bloc/profile_state.dart';
 import 'package:vstore_appl/data/models/profile_model.dart';
-import 'package:vstore_appl/settings/my_shared_preferences.dart';
+import 'package:vstore_appl/utils/my_shared_preferences.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit(ProfileState state) : super(state);

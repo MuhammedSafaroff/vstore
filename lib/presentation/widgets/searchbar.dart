@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vstore_appl/presentation/value/statics.dart';
+import 'package:vstore_appl/constants/statics.dart';
 
 class HomeSearchBar extends StatelessWidget {
   final String labelTxt;

@@ -2,11 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vstore_appl/blocs/profile_bloc/profile_cubit.dart';
-import 'package:vstore_appl/blocs/profile_bloc/profile_state.dart';
-import 'package:vstore_appl/presentation/value/statics.dart';
+import 'package:vstore_appl/data/services/my_firebase_store.dart';
+import 'package:vstore_appl/constants/statics.dart';
 import 'package:vstore_appl/presentation/page/have_a_market/widgets/dropdown_field.dart';
 import 'package:vstore_appl/presentation/widgets/widget.dart';
-import 'package:vstore_appl/services/my_firebase_store.dart';
 
 class StoreCreatePage extends StatelessWidget {
   StoreCreatePage({Key key, this.buildContext}) : super(key: key);

@@ -3,7 +3,7 @@ import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import 'package:vstore_appl/data/models/store_model.dart';
 import "package:vstore_appl/main.dart";
-import "package:vstore_appl/settings/my_shared_preferences.dart";
+import 'package:vstore_appl/utils/my_shared_preferences.dart';
 
 class MyFireBaseStore {
   static addStore(

@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vstore_appl/presentation/value/statics.dart';
+import 'package:vstore_appl/constants/statics.dart';
 
 import 'blocs/menu_selected_cubit/menu_selected_cubit.dart';
 import 'blocs/menu_selected_cubit/menu_selected_state.dart';

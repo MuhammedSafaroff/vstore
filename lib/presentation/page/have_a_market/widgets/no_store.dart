@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vstore_appl/presentation/page/have_a_market/store_create_page.dart';
-import 'package:vstore_appl/presentation/value/statics.dart';
+import 'package:vstore_appl/constants/statics.dart';
 
 class NoStore extends StatelessWidget {
   const NoStore({Key key}) : super(key: key);

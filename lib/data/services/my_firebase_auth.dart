@@ -2,12 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../data/models/profile_model.dart';
-import '../settings/my_shared_preferences.dart';
-import '../presentation/dialogs/progress_dialog.dart';
-import '../presentation/dialogs/dialog_platform.dart';
-
-import '../main.dart';
+import 'package:vstore_appl/data/models/profile_model.dart';
+import 'package:vstore_appl/main.dart';
+import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
+import 'package:vstore_appl/presentation/dialogs/progress_dialog.dart';
+import 'package:vstore_appl/utils/my_shared_preferences.dart';
 
 class MyFireBaseAuth {
   final FirebaseAuth _auth = FirebaseAuth.instance;
