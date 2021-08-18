@@ -4,6 +4,8 @@
         android:label="vstore_appl"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyDVLtb8e_ajGvDqisDSPqym8xA_gtc4YbE"/>
         
         <activity
             android:name=".MainActivity"
