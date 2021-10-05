@@ -1,9 +1,3 @@
-// To parse this JSON data, do
-//
-//     final storeModel = storeModelFromJson(jsonString);
-
-import 'package:flutter/widgets.dart';
-
 class StoreModel {
   StoreModel({
     this.storeName,
