@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:vstore_appl/data/my_list.dart';
 import 'package:vstore_appl/constants/statics.dart';
 
 class HomeProductItem extends StatelessWidget {
+  HomeProductItem({Key key, this.index, this.isCollapsed}) : super(key: key);
   final int index;
   final bool isCollapsed;
-  const HomeProductItem({Key key, this.index, this.isCollapsed})
-      : super(key: key);
+  final ValueNotifier<bool> favorite = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
@@ -36,25 +37,35 @@ class HomeProductItem extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                   child: Text(
-                    productList[index].name,
+                    productList[index].customer,
                     style: TextStyle(color: Colors.grey[700], fontSize: 16),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 6, 10, 10),
+                  child: Text(
+                    productList[index].name,
+                    style: TextStyle(color: Colors.grey[600], fontSize: 14),
+                  ),
+                ),
+                Spacer(),
                 productList[index].isDiscount
                     ? Padding(
-                        padding: const EdgeInsets.only(left: 5, right: 5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        padding: const EdgeInsets.only(left: 12, bottom: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "${productList[index].newPrice} AZN",
                               style: TextStyle(
                                   color: backgroundColor,
-                                  fontSize: 14,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w500),
                             ),
+                            SizedBox(height: 4),
                             Text("${productList[index].oldPrice} AZN",
                                 style: TextStyle(
                                     color: Colors.grey[600],
@@ -64,49 +75,35 @@ class HomeProductItem extends StatelessWidget {
                         ),
                       )
                     : Padding(
-                        padding: const EdgeInsets.only(left: 12),
+                        padding: const EdgeInsets.only(left: 12, bottom: 10),
                         child: Text(
                           "${productList[index].oldPrice} AZN",
                           style: TextStyle(
                               color: backgroundColor,
-                              fontSize: isCollapsed ? 14 : 11,
+                              fontSize: 15,
                               fontWeight: FontWeight.w500),
                         ),
                       ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      "Baku",
-                      style: TextStyle(
-                          color: Colors.grey[500],
-                          fontSize: 10,
-                          fontWeight: FontWeight.w500),
-                      textAlign: TextAlign.end,
-                    ),
-                  ),
-                )
               ],
             ),
           ),
           Positioned(
-            top: 16,
-            right: 16,
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(16)),
-              child: IconButton(
-                  constraints: BoxConstraints(
-                      maxHeight: 32, maxWidth: 32, minHeight: 32, minWidth: 32),
-                  padding: EdgeInsets.all(0),
-                  icon: Icon(
-                    Icons.favorite_border,
-                    size: 18,
+            top: 14,
+            right: 14,
+            child: ValueListenableBuilder<bool>(
+              valueListenable: favorite,
+              builder: (context, value,c) {
+                return InkWell(
+                  child: Icon(
+                   value?Icons.favorite: Icons.favorite_border,
+                    size: 28,
                     color: backgroundColor,
                   ),
-                  onPressed: () {}),
+                  onTap: () {
+                    favorite.value=!favorite.value;
+                  },
+                );
+              }
             ),
           ),
         ],

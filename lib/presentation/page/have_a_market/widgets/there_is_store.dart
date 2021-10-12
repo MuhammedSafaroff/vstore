@@ -44,7 +44,7 @@ class _ThereIsStoreState extends State<ThereIsStore> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                'https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/126120933_1854664544674105_383906952359355596_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=e3f864&_nc_ohc=vfhPf491nOcAX8QpEEb&_nc_ht=scontent-sof1-2.xx&oh=c94cf47ecee9efb315e5c5dc43abfb41&oe=611F0211'),
+                                'https://elements-cover-images-0.imgix.net/40acf5a3-8440-4b37-8ef0-eac26b45676b?auto=compress%2Cformat&fit=max&w=710&s=fc98467ecb67c70e02e40bef81835d05'),
                           ),
                         ),
                       ),
@@ -164,7 +164,7 @@ class _ThereIsStoreState extends State<ThereIsStore> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  'https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/126085978_1854659028007990_4937897992323261863_n.jpg?_nc_cat=106&_nc_rgb565=1&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=buZ6IdnQ1cEAX8Z6fdE&_nc_ht=scontent-sof1-2.xx&oh=d68be97c583e625942215096f5e5b6c0&oe=61220747'),
+                                  'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
                             ),
                           ),
                         ),
