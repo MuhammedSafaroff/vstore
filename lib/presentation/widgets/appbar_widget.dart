@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:vstore_appl/constants/statics.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
 
 class MyAppBar extends StatelessWidget {
   final bool isCollapsed;

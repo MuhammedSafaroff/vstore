@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vstore_appl/constants/statics.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
 import 'package:vstore_appl/presentation/page/have_a_market/widgets/store_about.dart';
 import 'package:vstore_appl/presentation/widgets/home_product_item.dart';
 

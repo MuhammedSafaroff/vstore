@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vstore_appl/constants/assets.dart';
+import 'package:vstore_appl/core/constants/assets.dart';
 
 class SocialMediaPart extends StatelessWidget {
   const SocialMediaPart({

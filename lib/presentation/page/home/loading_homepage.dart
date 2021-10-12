@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vstore_appl/constants/statics.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
 import '../../widgets/widget.dart';
 
 class LoadingHomePage extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vstore_appl/constants/statics.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
 
 class NewProductDropDown extends StatelessWidget {
   NewProductDropDown({

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vstore_appl/data/services/my_firebase_auth.dart';
-import 'package:vstore_appl/constants/statics.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
 import '../../../widgets/login_text_field.dart';
 
 class SignUpWidget extends StatefulWidget {

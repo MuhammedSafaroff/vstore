@@ -7,7 +7,7 @@ import 'package:vstore_appl/main.dart';
 import 'package:vstore_appl/presentation/app.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
 import 'package:vstore_appl/presentation/dialogs/progress_dialog.dart';
-import 'package:vstore_appl/utils/my_shared_preferences.dart';
+import 'package:vstore_appl/core/utils/my_shared_preferences.dart';
 
 class MyFireBaseAuth {
   final FirebaseAuth _auth = FirebaseAuth.instance;

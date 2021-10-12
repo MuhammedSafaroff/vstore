@@ -10,7 +10,7 @@ import 'package:vstore_appl/data/services/my_firebase_auth.dart';
 import 'package:vstore_appl/presentation/app.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
 import 'package:vstore_appl/presentation/dialogs/progress_dialog.dart';
-import 'package:vstore_appl/constants/statics.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
 import '../../../data/models/profile_model.dart';
 import '../../widgets/my_custom_button.dart';
 

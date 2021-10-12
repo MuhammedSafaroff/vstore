@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vstore_appl/presentation/page/have_a_market/have_a_market.dart';
+import 'package:vstore_appl/presentation/page/home/homepage.dart';
+import 'package:vstore_appl/presentation/page/markets/markets.dart';
+import 'package:vstore_appl/presentation/page/profile/profile.dart';
 
 import 'menu_selected_state.dart';
-import '../../presentation/page/have_a_market/have_a_market.dart';
 
-import '../../presentation/page/markets/markets.dart';
-import '../../presentation/page/profile/profile.dart';
-import '../../presentation/page/home/homepage.dart';
 
 class MenuSelectedCubit extends Cubit<MenuSelectedState> {
   MenuSelectedCubit(MenuSelectedState state) : super(state);

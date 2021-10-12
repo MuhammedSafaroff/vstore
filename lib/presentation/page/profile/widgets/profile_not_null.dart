@@ -3,8 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../data/models/profile_model.dart';
 import '../profile_edit.dart';
 import '../../sing_in_up/sign_in.dart';
-import '../../../../constants/statics.dart';
-import '../../../../utils/my_shared_preferences.dart';
+import '../../../../core/constants/statics.dart';
+import '../../../../core/utils/my_shared_preferences.dart';
 
 class ProfileNotNull extends StatelessWidget {
   const ProfileNotNull({Key key, this.data}) : super(key: key);

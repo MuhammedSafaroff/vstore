@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vstore_appl/data/my_list.dart';
-import 'package:vstore_appl/constants/statics.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
 
 class HomeProductItem extends StatelessWidget {
   HomeProductItem({Key key, this.index, this.isCollapsed}) : super(key: key);

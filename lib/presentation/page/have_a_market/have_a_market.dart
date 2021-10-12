@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vstore_appl/blocs/profile_bloc/profile_cubit.dart';
-import 'package:vstore_appl/blocs/profile_bloc/profile_state.dart';
+import 'package:vstore_appl/presentation/bloc/profile_bloc/profile_cubit.dart';
+import 'package:vstore_appl/presentation/bloc/profile_bloc/profile_state.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
 import 'package:vstore_appl/presentation/page/have_a_market/widgets/no_store.dart';
 import 'package:vstore_appl/presentation/page/have_a_market/widgets/there_is_store.dart';

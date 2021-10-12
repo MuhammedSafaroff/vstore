@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vstore_appl/main.dart';
 import 'package:vstore_appl/presentation/app.dart';
-import '../../../constants/statics.dart';
+import '../../../core/constants/statics.dart';
 import '../../widgets/widget.dart';
 
 class SignIn extends StatelessWidget {

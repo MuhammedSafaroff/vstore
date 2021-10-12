@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:vstore_appl/data/models/profile_model.dart';
-import 'package:vstore_appl/constants/statics.dart';
-import '../../../blocs/profile_bloc/profile_cubit.dart';
-import '../../../blocs/profile_bloc/profile_state.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
+import '../../../presentation/bloc/profile_bloc/profile_cubit.dart';
+import '../../../presentation/bloc/profile_bloc/profile_state.dart';
 
-import '../../../blocs/menu_selected_cubit/menu_selected_cubit.dart';
+import '../../../presentation/bloc/menu_selected_cubit/menu_selected_cubit.dart';
 import '../sing_in_up/sign_in.dart';
 
 class Menu extends StatelessWidget {

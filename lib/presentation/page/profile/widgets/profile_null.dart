@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../sing_in_up/sign_in.dart';
-import '../../../../constants/statics.dart';
+import '../../../../core/constants/statics.dart';
 
 class ProfileNull extends StatelessWidget {
   const ProfileNull({Key key}) : super(key: key);

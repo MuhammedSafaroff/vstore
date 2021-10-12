@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:vstore_appl/blocs/menu_selected_cubit/menu_selected_cubit.dart';
+import 'package:vstore_appl/presentation/bloc/menu_selected_cubit/menu_selected_cubit.dart';
 
-import 'package:vstore_appl/constants/statics.dart';
+import 'package:vstore_appl/core/constants/statics.dart';
 
 class HomeBottomNavBar extends StatelessWidget {
   int navItemIndex = 0;

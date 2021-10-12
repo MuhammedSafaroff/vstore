@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
-import '../../../blocs/profile_bloc/profile_state.dart';
-import '../../../blocs/profile_bloc/profile_cubit.dart';
+import '../../../presentation/bloc/profile_bloc/profile_state.dart';
+import '../../../presentation/bloc/profile_bloc/profile_cubit.dart';
 
 import '../../widgets/widget.dart';
 

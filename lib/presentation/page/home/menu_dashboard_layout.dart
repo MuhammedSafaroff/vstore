@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../blocs/menu_selected_cubit/menu_selected_state.dart';
+import '../../../presentation/bloc/menu_selected_cubit/menu_selected_state.dart';
 
-import '../../../blocs/menu_selected_cubit/menu_selected_cubit.dart';
+import '../../../presentation/bloc/menu_selected_cubit/menu_selected_cubit.dart';
 import '../menu/menu.dart';
 
-import '../../../constants/statics.dart';
+import '../../../core/constants/statics.dart';
 
 class MenuDashboardLayout extends StatefulWidget {
   MenuDashboardLayout({Key key}) : super(key: key);
