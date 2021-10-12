@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vstore_appl/data/models/profile_model.dart';
 import 'package:vstore_appl/main.dart';
+import 'package:vstore_appl/presentation/app.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
 import 'package:vstore_appl/presentation/dialogs/progress_dialog.dart';
 import 'package:vstore_appl/utils/my_shared_preferences.dart';
@@ -31,7 +32,7 @@ class MyFireBaseAuth {
       });
       Navigator.of(myContext, rootNavigator: true).pop();
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => App()));
     } on FirebaseAuthException catch (error) {
       Navigator.of(context, rootNavigator: false).pop();
       DialogPlatformCtrl(
@@ -56,7 +57,7 @@ class MyFireBaseAuth {
       MySharedPreferences().addSharedToken(user.user.uid);
       Navigator.of(myContext, rootNavigator: true).pop();
       Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => MyApp()),
+          MaterialPageRoute(builder: (context) => App()),
           (Route<dynamic> route) => false);
     } on FirebaseAuthException catch (error) {
       Navigator.of(context, rootNavigator: false).pop();

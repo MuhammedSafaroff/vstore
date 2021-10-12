@@ -2,7 +2,7 @@ import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import 'package:vstore_appl/data/models/store_model.dart';
-import "package:vstore_appl/main.dart";
+import 'package:vstore_appl/presentation/app.dart';
 import 'package:vstore_appl/utils/my_shared_preferences.dart';
 
 class MyFireBaseStore {
@@ -41,7 +41,7 @@ class MyFireBaseStore {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => MyApp(
+              builder: (context) => App(
                 index: 0,
                 name: "do_u_have_a_market",
               ),

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vstore_appl/data/services/my_firebase_auth.dart';
-import 'package:vstore_appl/main.dart';
+import 'package:vstore_appl/presentation/app.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
 import 'package:vstore_appl/presentation/dialogs/progress_dialog.dart';
 import 'package:vstore_appl/constants/statics.dart';
@@ -294,7 +294,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MyApp(
+                              builder: (context) => App(
                                 index: 3,
                                 name: 'profile',
                               ),
@@ -378,7 +378,7 @@ class _ProfileEditState extends State<ProfileEdit> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => MyApp(
+          builder: (context) => App(
             index: 3,
             name: 'profile',
           ),
