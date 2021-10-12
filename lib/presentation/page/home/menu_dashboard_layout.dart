@@ -8,7 +8,7 @@ import '../menu/menu.dart';
 import '../../../core/constants/statics.dart';
 
 class MenuDashboardLayout extends StatefulWidget {
-  MenuDashboardLayout({Key key}) : super(key: key);
+  MenuDashboardLayout({Key? key}) : super(key: key);
 
   @override
   _MenuDashboardLayoutState createState() => _MenuDashboardLayoutState();
@@ -18,26 +18,26 @@ class _MenuDashboardLayoutState extends State<MenuDashboardLayout>
     with SingleTickerProviderStateMixin {
   bool isCollapsed = true;
   Duration duration = const Duration(milliseconds: 300);
-  AnimationController _controller;
-  Animation<double> _scaleAnimation;
-  Animation<double> _menuScaleAnimation;
-  Animation<Offset> _slideAnimation;
+  AnimationController? _controller;
+  Animation<double>? _scaleAnimation;
+  Animation<double>? _menuScaleAnimation;
+  Animation<Offset>? _slideAnimation;
   TextEditingController searchField = new TextEditingController();
 
   @override
   void initState() {
     _controller = AnimationController(vsync: this, duration: duration);
-    _scaleAnimation = Tween<double>(begin: 1, end: 0.68).animate(_controller);
+    _scaleAnimation = Tween<double>(begin: 1, end: 0.68).animate(_controller!);
     _menuScaleAnimation =
-        Tween<double>(begin: 0.5, end: 1).animate(_controller);
+        Tween<double>(begin: 0.5, end: 1).animate(_controller!);
     _slideAnimation = Tween<Offset>(begin: Offset(-1, 0), end: Offset(0, 0))
-        .animate(_controller);
+        .animate(_controller!);
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller!.dispose();
     super.dispose();
   }
 
@@ -62,9 +62,10 @@ class _MenuDashboardLayoutState extends State<MenuDashboardLayout>
                   duration: duration,
                   scaleAnimation: _scaleAnimation,
                   menuOpen: menuOpen,
-                );
-              }
-            }),
+                )!;
+
+              }return SizedBox.shrink();
+            },),
           ],
         ),
       ),
@@ -76,10 +77,10 @@ class _MenuDashboardLayoutState extends State<MenuDashboardLayout>
       FocusScope.of(context).unfocus();
       new TextEditingController().clear();
       await Future.delayed(Duration(milliseconds: 0));
-      _controller.forward();
+      _controller!.forward();
     } else {
       await Future.delayed(Duration(milliseconds: 50));
-      _controller.reverse();
+      _controller!.reverse();
     }
     setState(() {
       isCollapsed = !isCollapsed;

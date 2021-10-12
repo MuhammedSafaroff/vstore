@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomTextRow extends StatelessWidget {
   const CustomTextRow(
-      {Key key,
+      {Key? key,
       @required this.title,
       this.description,
       this.isText = true,
@@ -12,7 +12,7 @@ class CustomTextRow extends StatelessWidget {
   final title;
   final description;
   final bool isText;
-  final Widget widget;
+  final Widget? widget;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class CustomTextRow extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.grey, fontSize: 15, letterSpacing: 0.0),
                 )
-              : widget,
+              : widget!,
         ],
       ),
     );

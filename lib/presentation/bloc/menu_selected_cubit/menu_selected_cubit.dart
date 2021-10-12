@@ -23,41 +23,41 @@ class MenuSelectedCubit extends Cubit<MenuSelectedState> {
   //   value = v;
   // }
 
-  Widget menuSelected(
-      {bool isCollapsed,
-      Duration duration,
-      Animation<double> scaleAnimation,
-      Function menuOpen,
+  Widget? menuSelected(
+      {bool? isCollapsed,
+      Duration? duration,
+      Animation<double>? scaleAnimation,
+      Function? menuOpen,
       var value}) {
     switch (state.key) {
       case "homepage":
         return MyHomePage(
-          isCollapsed: isCollapsed,
-          duration: duration,
-          scaleAnimation: scaleAnimation,
-          menuOpen: menuOpen,
+          isCollapsed: isCollapsed!,
+          duration: duration!,
+          scaleAnimation: scaleAnimation!,
+          menuOpen: menuOpen!,
         );
       case "do_u_have_a_market":
         return HaveAMaket(
-          isCollapsed: isCollapsed,
-          duration: duration,
-          scaleAnimation: scaleAnimation,
-          menuOpen: menuOpen,
+          isCollapsed: isCollapsed!,
+          duration: duration!,
+          scaleAnimation: scaleAnimation!,
+          menuOpen: menuOpen!,
           // haveAStore: value,
         );
       case "markets":
         return Markets(
-          isCollapsed: isCollapsed,
-          duration: duration,
-          scaleAnimation: scaleAnimation,
-          menuOpen: menuOpen,
+          isCollapsed: isCollapsed!,
+          duration: duration!,
+          scaleAnimation: scaleAnimation!,
+          menuOpen: menuOpen!,
         );
       case "profile":
         return Profile(
-          isCollapsed: isCollapsed,
-          duration: duration,
-          scaleAnimation: scaleAnimation,
-          menuOpen: menuOpen,
+          isCollapsed: isCollapsed!,
+          duration: duration!,
+          scaleAnimation: scaleAnimation!,
+          menuOpen: menuOpen!,
         );
     }
   }

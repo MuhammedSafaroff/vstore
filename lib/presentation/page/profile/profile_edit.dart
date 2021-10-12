@@ -15,8 +15,8 @@ import '../../../data/models/profile_model.dart';
 import '../../widgets/my_custom_button.dart';
 
 class ProfileEdit extends StatefulWidget {
-  ProfileEdit({Key key, this.data}) : super(key: key);
-  final ProfileModel data;
+  ProfileEdit({Key? key, this.data}) : super(key: key);
+  final ProfileModel? data;
 
   @override
   _ProfileEditState createState() => _ProfileEditState();
@@ -24,32 +24,32 @@ class ProfileEdit extends StatefulWidget {
 
 class _ProfileEditState extends State<ProfileEdit> {
   bool enabled = false;
-  String gender;
-  TextEditingController fullNameController;
-  TextEditingController emailController;
-  TextEditingController telNoController;
-  Size size;
-  double screenHeight;
-  String imageUrl;
+  String? gender;
+  TextEditingController? fullNameController;
+  TextEditingController? emailController;
+  TextEditingController? telNoController;
+  Size? size;
+  double? screenHeight;
+  String? imageUrl;
   //
-  PickedFile image;
+  PickedFile? image;
   var file;
-  String imageNameUrl;
+  String? imageNameUrl;
   bool loading = false;
   @override
   void initState() {
-    fullNameController = TextEditingController(text: widget.data.fullName);
-    emailController = TextEditingController(text: widget.data.email);
-    telNoController = TextEditingController(text: widget.data.phoneNumber);
-    gender = widget.data.gender;
-    imageUrl = widget.data.photeUrl;
+    fullNameController = TextEditingController(text: widget.data!.fullName);
+    emailController = TextEditingController(text: widget.data!.email);
+    telNoController = TextEditingController(text: widget.data!.phoneNumber);
+    gender = widget.data!.gender;
+    imageUrl = widget.data!.photeUrl;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
-    screenHeight = size.height;
+    screenHeight = size!.height;
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
@@ -76,13 +76,13 @@ class _ProfileEditState extends State<ProfileEdit> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: screenHeight * 0.035),
+                  SizedBox(height: screenHeight! * 0.035),
                   Stack(
                     children: [
                       CircleAvatar(
                         backgroundImage: file != null
                             ? FileImage(file)
-                            : NetworkImage(imageUrl) as ImageProvider,
+                            : NetworkImage(imageUrl!) as ImageProvider,
                         radius: 60,
                         backgroundColor: Colors.transparent,
                       ),
@@ -107,7 +107,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                       )
                     ],
                   ),
-                  SizedBox(height: screenHeight * 0.03),
+                  SizedBox(height: screenHeight! * 0.03),
                   TextFormField(
                     enabled: enabled,
                     controller: fullNameController,
@@ -143,7 +143,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                       ),
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.03),
+                  SizedBox(height: screenHeight! * 0.03),
                   TextFormField(
                     enabled: false,
                     controller: emailController,
@@ -165,7 +165,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                       ),
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.03),
+                  SizedBox(height: screenHeight! * 0.03),
                   TextFormField(
                     enabled: enabled,
                     controller: telNoController,
@@ -204,7 +204,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                       ),
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.03),
+                  SizedBox(height: screenHeight! * 0.03),
                   Container(
                     height: 58,
                     width: MediaQuery.of(context).size.width - 34,
@@ -228,7 +228,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                               border: Border.all(
                                   color: gender == 'male'
                                       ? Colors.blueAccent
-                                      : Colors.grey[300],
+                                      : Colors.grey[300]!,
                                   width: 2),
                             ),
                             height: 54,
@@ -256,7 +256,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                               border: Border.all(
                                   color: gender == 'female'
                                       ? Colors.pinkAccent
-                                      : Colors.grey[300],
+                                      : Colors.grey[300]!,
                                   width: 2),
                             ),
                             height: 54,
@@ -271,7 +271,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                       ],
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.065),
+                  SizedBox(height: screenHeight! * 0.065),
                   MyCustomButton(
                     backColor: enabled ? 0xFF03D36F : 0xFFdd0d4b,
                     title: enabled ? 'Yadda saxla' : 'Hesab məlumatların dəyiş',
@@ -285,12 +285,15 @@ class _ProfileEditState extends State<ProfileEdit> {
                         if (image != null) {
                           uploadImage();
                         } else {
-                          var a = MyFireBaseAuth().myProfileUpdate(ProfileModel(
-                              fullName: fullNameController.text,
-                              gender: gender,
-                              phoneNumber: telNoController.text,
-                              token: widget.data.token,
-                              photeUrl: imageUrl));
+                          var a = MyFireBaseAuth().myProfileUpdate(
+                            ProfileModel(
+                              fullName: fullNameController!.text,
+                              gender: gender!,
+                              phoneNumber: telNoController!.text,
+                              token: widget.data!.token,
+                              photeUrl: imageUrl!,
+                            ),
+                          );
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -325,7 +328,7 @@ class _ProfileEditState extends State<ProfileEdit> {
       image = await _picker.getImage(source: ImageSource.gallery);
       if (image != null)
         setState(() {
-          file = File(image.path);
+          file = File(image!.path);
         });
     } else {
       DialogPlatformCtrl(
@@ -352,7 +355,7 @@ class _ProfileEditState extends State<ProfileEdit> {
 
     var snapshot = await _storage
         .ref()
-        .child(widget.data.token + '/' + name)
+        .child(widget.data!.token + '/' + name)
         .putFile(file)
         .whenComplete(() {
       setState(() {
@@ -363,15 +366,18 @@ class _ProfileEditState extends State<ProfileEdit> {
     imageNameUrl = await snapshot.ref.getDownloadURL();
 
     if (imageNameUrl != null) {
-      var a = await MyFireBaseAuth().myProfileUpdate(ProfileModel(
-          fullName: fullNameController.text,
-          gender: gender,
-          phoneNumber: telNoController.text,
-          token: widget.data.token,
-          photeUrl: imageNameUrl));
+      var a = await MyFireBaseAuth().myProfileUpdate(
+        ProfileModel(
+          fullName: fullNameController!.text,
+          gender: gender!,
+          phoneNumber: telNoController!.text,
+          token: widget.data!.token,
+          photeUrl: imageNameUrl!,
+        ),
+      );
       if (imageUrl !=
           'https://firebasestorage.googleapis.com/v0/b/vstore-7528c.appspot.com/o/defaultImage%2Fprofile_image.jpg?alt=media&token=ee78e9a0-2703-404f-a8f4-82f15964a2da') {
-        Reference ref = await FirebaseStorage.instance.refFromURL(imageUrl);
+        Reference ref = await FirebaseStorage.instance.refFromURL(imageUrl!);
         await ref.delete();
       }
       Navigator.of(myContext, rootNavigator: false).pop();

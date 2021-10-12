@@ -8,7 +8,7 @@ import 'package:vstore_appl/core/constants/statics.dart';
 
 class HomeBottomNavBar extends StatelessWidget {
   int navItemIndex = 0;
-  HomeBottomNavBar({Key key}) : super(key: key);
+  HomeBottomNavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -9,11 +9,11 @@ class ProfileState extends Equatable {
 class ProfileLoadingState extends ProfileState {}
 
 class ProfileLoadedState extends ProfileState {
-  final String token;
-  final ProfileModel model;
+  final String? token;
+  final ProfileModel? model;
 
   ProfileLoadedState({this.model, this.token});
-  List<Object> get props => [model, token];
+  List<Object> get props => [model!, token!];
 }
 
 class ProfileErrorState extends ProfileState {

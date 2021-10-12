@@ -3,7 +3,7 @@ import 'package:vstore_appl/presentation/page/have_a_market/store_create_page.da
 import 'package:vstore_appl/core/constants/statics.dart';
 
 class NoStore extends StatelessWidget {
-  const NoStore({Key key}) : super(key: key);
+  const NoStore({Key ?key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

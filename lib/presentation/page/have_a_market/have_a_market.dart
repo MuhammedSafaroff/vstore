@@ -8,14 +8,14 @@ import 'package:vstore_appl/presentation/page/have_a_market/widgets/there_is_sto
 import '../../widgets/widget.dart';
 
 class HaveAMaket extends StatelessWidget {
-  final bool isCollapsed;
-  final Duration duration;
-  final Animation<double> scaleAnimation;
-  final Function menuOpen;
-  final bool haveAStore;
+  final bool? isCollapsed;
+  final Duration? duration;
+  final Animation<double>? scaleAnimation;
+  final Function? menuOpen;
+  final bool? haveAStore;
 
   HaveAMaket({
-    Key key,
+    Key? key,
     this.isCollapsed,
     this.duration,
     this.scaleAnimation,
@@ -23,22 +23,22 @@ class HaveAMaket extends StatelessWidget {
     this.haveAStore,
   }) : super(key: key);
 
-  double screenWidth;
   @override
   Widget build(BuildContext context) {
+    double screenWidth;
     final size = MediaQuery.of(context).size;
     screenWidth = size.width;
     return AnimatedPositioned(
-      duration: duration,
+      duration: duration!,
       top: 0,
       bottom: 0,
-      left: isCollapsed ? 0 : 0.45 * screenWidth,
-      right: isCollapsed ? 0 : -0.55 * screenWidth,
+      left: isCollapsed! ? 0 : 0.45 * screenWidth,
+      right: isCollapsed! ? 0 : -0.55 * screenWidth,
       child: ScaleTransition(
-        scale: scaleAnimation,
+        scale: scaleAnimation!,
         child: Material(
-            animationDuration: duration,
-            borderRadius: isCollapsed ? null : BorderRadius.circular(20),
+            animationDuration: duration!,
+            borderRadius: isCollapsed! ? null : BorderRadius.circular(20),
             elevation: 8,
             color: Color(0xffF6F6F9),
             child: BlocProvider(
@@ -61,9 +61,9 @@ class HaveAMaket extends StatelessWidget {
                           );
                         } else if (state is ProfileLoadedState) {
                           return Expanded(
-                            child: !state.model.doYouHaveAStore
+                            child: !state.model!.doYouHaveAStore
                                 ? NoStore()
-                                : ThereIsStore(token: state.model.token),
+                                : ThereIsStore(token: state.model!.token),
                           );
                         } else if (state is ProfileErrorState) {
                           DialogPlatformCtrl(

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyDialog {
-  final String title;
-  final Widget myContent;
-  final String yesButton;
-  final Function yesButtonFun;
-  final String cancelButton;
-  final Function cancelButtonFun;
-  final bool cancelButtonCtrl;
-  final BuildContext context;
+  final String? title;
+  final Widget? myContent;
+  final String? yesButton;
+  final Function? yesButtonFun;
+  final String? cancelButton;
+  final Function? cancelButtonFun;
+  final bool? cancelButtonCtrl;
+  final BuildContext? context;
 
   MyDialog({
     this.title,
@@ -23,17 +23,17 @@ class MyDialog {
 
   showAlertDialog() {
     showDialog(
-      context: context,
+      context: context!,
       builder: (context) {
         return AlertDialog(
-          title: Text(title),
+          title: Text(title!),
           content: myContent,
           actions: <Widget>[
-            TextButton(child: Text(yesButton), onPressed: yesButtonFun),
-            cancelButtonCtrl
+            TextButton(child: Text(yesButton!), onPressed:()=> yesButtonFun!()),
+            cancelButtonCtrl!
                 ? TextButton(
-                    child: Text(cancelButton), onPressed: cancelButtonFun)
-                : null,
+                    child: Text(cancelButton!), onPressed:()=> cancelButtonFun!())
+                : SizedBox.shrink(),
           ],
         );
       },

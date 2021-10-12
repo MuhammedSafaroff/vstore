@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../../core/constants/statics.dart';
 
 class LoginTextField extends StatelessWidget {
-  final TextEditingController valueController;
-  final String name;
-  final IconData icons;
-  final TextInputType keyType;
-  final String Function(String) validator;
+  final TextEditingController? valueController;
+  final String? name;
+  final IconData? icons;
+  final TextInputType? keyType;
+  final String? Function(String?)? validator;
 
   const LoginTextField({
-    Key key,
+    Key? key,
     this.valueController,
     this.name,
     this.icons,
@@ -53,14 +53,14 @@ class LoginTextField extends StatelessWidget {
 }
 
 class LoginTextFieldPass extends StatelessWidget {
-  final TextEditingController valueController;
-  final String name;
-  final IconData icons;
-  final TextInputType keyType;
-  final Function fun;
-  final bool isPass;
+  final TextEditingController? valueController;
+  final String? name;
+  final IconData ?icons;
+  final TextInputType? keyType;
+  final Function? fun;
+  final bool ?isPass;
   const LoginTextFieldPass({
-    Key key,
+    Key? key,
     this.valueController,
     this.name,
     this.icons,
@@ -73,7 +73,7 @@ class LoginTextFieldPass extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLines: 1,
-      obscureText: isPass,
+      obscureText: isPass!,
       controller: valueController,
       decoration: InputDecoration(
         prefixIcon: Icon(
@@ -81,8 +81,8 @@ class LoginTextFieldPass extends StatelessWidget {
         ),
         suffixIcon: IconButton(
           icon: Icon(
-              isPass ? Icons.visibility_off_rounded : Icons.visibility_rounded),
-          onPressed: fun,
+              isPass! ? Icons.visibility_off_rounded : Icons.visibility_rounded),
+          onPressed:()=> fun!(),
         ),
         labelText: name,
         errorBorder: OutlineInputBorder(
@@ -105,7 +105,7 @@ class LoginTextFieldPass extends StatelessWidget {
         ),
       ),
       validator: (value) {
-        if (value.trim().isEmpty || value.trim() == "") {
+        if (value!.trim().isEmpty || value.trim() == "") {
           return 'Please enter some text';
         } else if (value.trim().length < 6) {
           return 'Password should be at least 6 characters';

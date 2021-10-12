@@ -10,20 +10,20 @@ class DialogPlatformCtrl {
   final Widget myContent;
   final String yesButton;
   final Function yesButtonFun;
-  final String cancelButton;
-  final Function cancelButtonFun;
+  final String? cancelButton;
+  final Function? cancelButtonFun;
   final bool cancelButtonCtrl;
   final BuildContext context;
 
   DialogPlatformCtrl({
-    @required this.title,
-    @required this.myContent,
-    @required this.yesButton,
-    @required this.yesButtonFun,
+    required this.title,
+    required this.myContent,
+    required this.yesButton,
+    required this.yesButtonFun,
     this.cancelButton,
     this.cancelButtonFun,
     this.cancelButtonCtrl = false,
-    @required this.context,
+    required this.context,
   });
   void platformCtrlDialog() {
     if (Platform.isIOS) {
@@ -32,8 +32,8 @@ class DialogPlatformCtrl {
         myContent: myContent,
         yesButton: yesButton,
         yesButtonFun: yesButtonFun,
-        cancelButton: cancelButton,
-        cancelButtonFun: cancelButtonFun,
+        cancelButton: cancelButton!,
+        cancelButtonFun: cancelButtonFun!,
         cancelButtonCtrl: cancelButtonCtrl,
         context: context,
       ).showAlertDialog();
@@ -43,8 +43,8 @@ class DialogPlatformCtrl {
         myContent: myContent,
         yesButton: yesButton,
         yesButtonFun: yesButtonFun,
-        cancelButton: cancelButton,
-        cancelButtonFun: cancelButtonFun,
+        cancelButton: cancelButton!,
+        cancelButtonFun: cancelButtonFun!,
         cancelButtonCtrl: cancelButtonCtrl,
         context: context,
       ).showAlertDialog();

@@ -1,15 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:vstore_appl/main.dart';
 import 'package:vstore_appl/presentation/app.dart';
 import '../../../core/constants/statics.dart';
 import '../../widgets/widget.dart';
 
 class SignIn extends StatelessWidget {
-  SignIn({Key key}) : super(key: key);
+  SignIn({Key? key}) : super(key: key);
 
-  Size size;
+  Size? size;
 
   List<Tab> _tabList = [
     Tab(
@@ -36,7 +35,7 @@ class SignIn extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: size.height * 0.35,
+                height: size!.height * 0.35,
                 child: AppBar(
                   flexibleSpace: Center(
                     child: Text(
@@ -77,7 +76,7 @@ class SignIn extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(height: size.height * 0.65, child: MyTabView()),
+              Container(height: size!.height * 0.65, child: MyTabView()),
             ],
           ),
         ),

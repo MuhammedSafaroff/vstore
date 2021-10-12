@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:vstore_appl/core/constants/statics.dart';
 
 class HomeSlider extends StatelessWidget {
-  const HomeSlider({Key key}) : super(key: key);
+  const HomeSlider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

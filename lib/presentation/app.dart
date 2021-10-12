@@ -9,7 +9,7 @@ class App extends StatelessWidget {
   final int index;
   final String name;
 
-  const App({Key key, this.index = 0, this.name = 'homepage'})
+  const App({Key? key, this.index = 0, this.name = 'homepage'})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
           primaryColor: backgroundColor,
           fontFamily: "VarelaRound",
-          primarySwatch: backgroundMaterialColor,
+          primarySwatch: backgroundMaterialColor as MaterialColor,
           textSelectionTheme:
               TextSelectionThemeData(cursorColor: backgroundColor)),
       home: MultiBlocProvider(

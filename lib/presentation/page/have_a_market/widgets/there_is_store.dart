@@ -5,15 +5,15 @@ import 'package:vstore_appl/presentation/page/have_a_market/widgets/store_about.
 import 'package:vstore_appl/presentation/widgets/home_product_item.dart';
 
 class ThereIsStore extends StatefulWidget {
-  ThereIsStore({Key key, this.token}) : super(key: key);
-  final String token;
+  ThereIsStore({Key? key, this.token}) : super(key: key);
+  final String? token;
 
   @override
   _ThereIsStoreState createState() => _ThereIsStoreState();
 }
 
 class _ThereIsStoreState extends State<ThereIsStore> {
-  double screenWidth;
+  double? screenWidth;
 
   int isHome = 0;
 
@@ -69,10 +69,10 @@ class _ThereIsStoreState extends State<ThereIsStore> {
                         child: Container(
                           margin: EdgeInsets.symmetric(horizontal: 10),
                           height: 190,
-                          width: screenWidth - 40,
+                          width: screenWidth! - 40,
                           alignment: Alignment.topLeft,
                           padding: EdgeInsets.only(
-                              left: ((screenWidth - 40) / 2.9) + 10),
+                              left: ((screenWidth! - 40) / 2.9) + 10),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(25),
@@ -88,7 +88,7 @@ class _ThereIsStoreState extends State<ThereIsStore> {
                               ),
                               SizedBox(height: 16),
                               SizedBox(
-                                width: (screenWidth - 40) * 1.4 / 3,
+                                width: (screenWidth! - 40) * 1.4 / 3,
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -158,7 +158,7 @@ class _ThereIsStoreState extends State<ThereIsStore> {
                         bottom: 60,
                         child: Container(
                           height: 170,
-                          width: (screenWidth - 40) / 2.9,
+                          width: (screenWidth! - 40) / 2.9,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
                             image: DecorationImage(

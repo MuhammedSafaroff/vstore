@@ -8,14 +8,14 @@ import 'package:vstore_appl/presentation/page/have_a_market/widgets/dropdown_fie
 import 'package:vstore_appl/presentation/widgets/widget.dart';
 
 class StoreCreatePage extends StatelessWidget {
-  StoreCreatePage({Key key, this.buildContext}) : super(key: key);
+  StoreCreatePage({Key? key, this.buildContext}) : super(key: key);
   final List<String> items =
       'Elektronika,Şəxsi əşyalar,Nəqliyyat,Heyvanlar,idman və əyləncə,Uşaq dünyası,Ev və bağ,Təhsil və ofis ləvazimatları,Alətlər və xırdavat'
           .split(',');
   final _formKey = GlobalKey<FormState>();
-  final ValueNotifier<String> unitController = ValueNotifier<String>(null);
+  final ValueNotifier<String> unitController = ValueNotifier<String>('');
   final TextEditingController nameController = TextEditingController();
-  final BuildContext buildContext;
+  final BuildContext? buildContext;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,7 @@ class StoreCreatePage extends StatelessWidget {
                     icons: CupertinoIcons.doc_text,
                     valueController: nameController,
                     validator: (value) {
-                      if (value.trim().isEmpty || value.trim() == "") {
+                      if (value!.trim().isEmpty || value.trim() == "") {
                         return 'Please enter some text';
                       }
                       return null;
@@ -49,14 +49,18 @@ class StoreCreatePage extends StatelessWidget {
                     controller: unitController,
                     labelText: 'Category',
                     icons: Icon(Icons.category_outlined),
-                    validator: (value) =>
-                        value == null ? 'field required' : null,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'field required';
+                      }
+                      return null;
+                    },
                   ),
                   SizedBox(height: 22),
                   Spacer(),
                   ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState.validate())
+                      if (_formKey.currentState!.validate())
                         MyFireBaseStore.addStore(
                             nameController.text, unitController.value, context);
                       context.read<ProfileCubit>().pullToken();

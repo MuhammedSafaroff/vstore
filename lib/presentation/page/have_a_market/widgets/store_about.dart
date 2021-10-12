@@ -6,22 +6,22 @@ import 'package:vstore_appl/presentation/page/have_a_market/widgets/custom_text_
 import 'package:vstore_appl/presentation/page/have_a_market/widgets/social_media_part.dart';
 
 class StoreAbout extends StatefulWidget {
-  StoreAbout({Key key}) : super(key: key);
+  StoreAbout({Key? key}) : super(key: key);
 
   @override
   _StoreAboutState createState() => _StoreAboutState();
 }
 
 class _StoreAboutState extends State<StoreAbout> {
-  CameraPosition _kGooglePlex;
+  CameraPosition? _kGooglePlex;
 
   Completer<GoogleMapController> _controller = Completer();
 
-  CameraPosition _kLake;
+  CameraPosition? _kLake;
 
   Future<void> _goToTheLake() async {
     final GoogleMapController controller = await _controller.future;
-    await controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
+    await controller.animateCamera(CameraUpdate.newCameraPosition(_kLake!));
   }
 
   @override
@@ -77,7 +77,7 @@ class _StoreAboutState extends State<StoreAbout> {
             borderRadius: BorderRadius.circular(30),
             child: GoogleMap(
               mapType: MapType.normal,
-              initialCameraPosition: _kGooglePlex,
+              initialCameraPosition: _kGooglePlex!,
               compassEnabled: true,
               mapToolbarEnabled: true,
               myLocationButtonEnabled: true,

@@ -5,7 +5,7 @@ import 'package:vstore_appl/core/constants/statics.dart';
 import '../../../widgets/login_text_field.dart';
 
 class SignUpWidget extends StatefulWidget {
-  SignUpWidget({Key key}) : super(key: key);
+  SignUpWidget({Key? key}) : super(key: key);
 
   @override
   _SignUpWidgetState createState() => _SignUpWidgetState();
@@ -50,7 +50,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               icons: CupertinoIcons.person,
               valueController: fullNameController,
               validator: (value) {
-                if (value.trim().isEmpty || value.trim() == "") {
+                if (value!.trim().isEmpty || value.trim() == "") {
                   return 'Please enter some text';
                 }
                 return null;
@@ -63,7 +63,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               icons: CupertinoIcons.at,
               valueController: emailController,
               validator: (value) {
-                if (value.trim().isEmpty || value.trim() == "") {
+                if (value!.trim().isEmpty || value.trim() == "") {
                   return 'Please enter some text';
                 }
                 return null;
@@ -81,7 +81,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
             Spacer(),
             ElevatedButton(
               onPressed: () {
-                if (_formKey.currentState.validate()) {
+                if (_formKey.currentState!.validate()) {
                   MyFireBaseAuth().createUserEmailandPassword(
                       emailController.text.trim(),
                       passController.text,

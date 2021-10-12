@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class MyCustomButton extends StatelessWidget {
-  final String title;
-  final Function onTap;
-  final int backColor;
-  final int textColor;
+  final String? title;
+  final Function? onTap;
+  final int? backColor;
+  final int? textColor;
 
   const MyCustomButton(
-      {Key key,
+      {Key? key,
       this.title,
       this.onTap,
       this.backColor = 0xffFA4A0C,
@@ -18,19 +18,19 @@ class MyCustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(16.0),
-      onTap: onTap,
+      onTap:()=> onTap!(),
       child: Container(
         width: double.infinity,
         height: 55,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.0),
-          color: Color(backColor),
+          color: Color(backColor!),
         ),
         child: Center(
           child: Text(
-            title,
+            title!,
             style: TextStyle(
-                color: Color(textColor),
+                color: Color(textColor!),
                 fontSize: 16.0,
                 fontWeight: FontWeight.w600),
           ),

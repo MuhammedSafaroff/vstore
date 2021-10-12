@@ -3,23 +3,23 @@ import 'package:vstore_appl/core/constants/statics.dart';
 
 class NewProductDropDown extends StatelessWidget {
   NewProductDropDown({
-    Key key,
+    Key? key,
     this.items,
     this.labelText,
     this.controller,
     this.icons,
     this.validator,
   }) : super(key: key);
-  final List<String> items;
-  final String labelText;
-  final Icon icons;
-  final String Function(String) validator;
-  final ValueNotifier<String> controller;
+  final List<String>? items;
+  final String? labelText;
+  final Icon? icons;
+  final String? Function(String?)? validator;
+  final ValueNotifier<String>? controller;
 
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<String>(
-      valueListenable: controller,
+      valueListenable: controller!,
       builder: (context, value, child) => DropdownButtonFormField(
         style: TextStyle(
           fontSize: 16,
@@ -51,8 +51,8 @@ class NewProductDropDown extends StatelessWidget {
         validator: validator,
         // hint: Text(ddText),
 
-        onChanged: (String newValue) => controller.value = newValue,
-        items: items.map<DropdownMenuItem<String>>((String value) {
+        onChanged: (String? newValue) => controller!.value = newValue!,
+        items: items!.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:vstore_appl/core/constants/statics.dart';
 
 class HomeSearchBar extends StatelessWidget {
-  final String labelTxt;
-  final bool isCollapsed;
-  final TextEditingController textEditingController;
+  final String? labelTxt;
+  final bool? isCollapsed;
+  final TextEditingController? textEditingController;
   const HomeSearchBar(
-      {Key key, this.labelTxt, this.isCollapsed, this.textEditingController})
+      {Key? key, this.labelTxt, this.isCollapsed, this.textEditingController})
       : super(key: key);
 
   @override

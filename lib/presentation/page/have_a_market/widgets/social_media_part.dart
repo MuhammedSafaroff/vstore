@@ -4,7 +4,7 @@ import 'package:vstore_appl/core/constants/assets.dart';
 
 class SocialMediaPart extends StatelessWidget {
   const SocialMediaPart({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

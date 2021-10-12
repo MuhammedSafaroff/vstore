@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vstore_appl/data/models/profile_model.dart';
-import 'package:vstore_appl/main.dart';
 import 'package:vstore_appl/presentation/app.dart';
 import 'package:vstore_appl/presentation/dialogs/dialog_platform.dart';
 import 'package:vstore_appl/presentation/dialogs/progress_dialog.dart';
@@ -20,8 +19,8 @@ class MyFireBaseAuth {
     try {
       var user = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-      MySharedPreferences().addSharedToken(user.user.uid);
-      _firestore.collection('Person').doc(user.user.uid).set({
+      MySharedPreferences().addSharedToken(user.user!.uid);
+      _firestore.collection('Person').doc(user.user!.uid).set({
         'fullName': fullName,
         'email': email,
         'gender': '',
@@ -37,7 +36,7 @@ class MyFireBaseAuth {
       Navigator.of(context, rootNavigator: false).pop();
       DialogPlatformCtrl(
         title: 'Error',
-        myContent: Text(error.message),
+        myContent: Text(error.message!),
         context: context,
         yesButton: 'OK',
         yesButtonFun: () {
@@ -54,7 +53,7 @@ class MyFireBaseAuth {
     try {
       var user = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
-      MySharedPreferences().addSharedToken(user.user.uid);
+      MySharedPreferences().addSharedToken(user.user!.uid);
       Navigator.of(myContext, rootNavigator: true).pop();
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => App()),
@@ -63,7 +62,7 @@ class MyFireBaseAuth {
       Navigator.of(context, rootNavigator: false).pop();
       DialogPlatformCtrl(
         title: 'Error',
-        myContent: Text(error.message),
+        myContent: Text(error.message!),
         context: context,
         yesButton: 'OK',
         yesButtonFun: () {
@@ -84,5 +83,6 @@ class MyFireBaseAuth {
     }).catchError((onError) {
       return "onError";
     });
+    return "";
   }
 }

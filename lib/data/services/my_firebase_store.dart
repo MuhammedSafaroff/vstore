@@ -65,7 +65,7 @@ class MyFireBaseStore {
 
     if (documentSnapshot.exists) {
       var value = documentSnapshot.data();
-      storeModel = StoreModel.fromJson(value);
+      storeModel = StoreModel.fromJson(value!);
     }
     return storeModel;
   }

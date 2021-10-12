@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../../widgets/widget.dart';
 
 class Markets extends StatefulWidget {
-  final bool isCollapsed;
-  final Duration duration;
-  final Animation<double> scaleAnimation;
-  final Function menuOpen;
+  final bool? isCollapsed;
+  final Duration? duration;
+  final Animation<double>? scaleAnimation;
+  final Function? menuOpen;
   const Markets(
-      {Key key,
+      {Key? key,
       this.isCollapsed,
       this.duration,
       this.scaleAnimation,
@@ -19,22 +19,22 @@ class Markets extends StatefulWidget {
 }
 
 class _MarketsState extends State<Markets> {
-  double screenWidth;
+  double? screenWidth;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     screenWidth = size.width;
     return AnimatedPositioned(
-      duration: widget.duration,
+      duration: widget.duration!,
       top: 0,
       bottom: 0,
-      left: widget.isCollapsed ? 0 : 0.45 * screenWidth,
-      right: widget.isCollapsed ? 0 : -0.55 * screenWidth,
+      left: widget.isCollapsed! ? 0 : 0.45 * screenWidth!,
+      right: widget.isCollapsed! ? 0 : -0.55 * screenWidth!,
       child: ScaleTransition(
-        scale: widget.scaleAnimation,
+        scale: widget.scaleAnimation!,
         child: Material(
-          animationDuration: widget.duration,
-          borderRadius: widget.isCollapsed ? null : BorderRadius.circular(20),
+          animationDuration: widget.duration!,
+          borderRadius: widget.isCollapsed! ? null : BorderRadius.circular(20),
           elevation: 8,
           color: Color(0xffF6F6F9),
           child: Container(

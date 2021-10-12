@@ -3,9 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vstore_appl/core/constants/statics.dart';
 
 class MyAppBar extends StatelessWidget {
-  final bool isCollapsed;
-  final Function menuOpen;
-  const MyAppBar({Key key, this.isCollapsed, this.menuOpen}) : super(key: key);
+  final bool? isCollapsed;
+  final Function? menuOpen;
+  const MyAppBar({Key? key, this.isCollapsed, this.menuOpen}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MyAppBar extends StatelessWidget {
       backgroundColor: Color(0xffF6F6F9),
       centerTitle: true,
       shape: RoundedRectangleBorder(
-        borderRadius: isCollapsed
+        borderRadius: isCollapsed!
             ? BorderRadius.vertical(
                 bottom: Radius.circular(20),
               )
@@ -24,7 +24,7 @@ class MyAppBar extends StatelessWidget {
             FontAwesomeIcons.bars,
             color: backgroundColor,
           ),
-          onPressed: menuOpen),
+          onPressed:()=> menuOpen!()),
       title: Text(
         "Vstore",
         style: TextStyle(

@@ -7,8 +7,8 @@ import '../../../../core/constants/statics.dart';
 import '../../../../core/utils/my_shared_preferences.dart';
 
 class ProfileNotNull extends StatelessWidget {
-  const ProfileNotNull({Key key, this.data}) : super(key: key);
-  final ProfileModel data;
+  const ProfileNotNull({Key? key, this.data}) : super(key: key);
+  final ProfileModel? data;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class ProfileNotNull extends StatelessWidget {
               child: Row(
                 children: [
                   CircleAvatar(
-                    backgroundImage: NetworkImage(data.photeUrl),
+                    backgroundImage: NetworkImage(data!.photeUrl),
                     radius: 34,
                     backgroundColor: Colors.transparent,
                   ),
@@ -39,7 +39,7 @@ class ProfileNotNull extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        data.fullName,
+                        data!.fullName,
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -47,7 +47,7 @@ class ProfileNotNull extends StatelessWidget {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        data.email,
+                        data!.email,
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ],

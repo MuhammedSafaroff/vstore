@@ -7,12 +7,12 @@ import '../../../presentation/bloc/profile_bloc/profile_cubit.dart';
 import '../../widgets/widget.dart';
 
 class Profile extends StatelessWidget {
-  final bool isCollapsed;
-  final Duration duration;
-  final Animation<double> scaleAnimation;
-  final Function menuOpen;
+  final bool? isCollapsed;
+  final Duration? duration;
+  final Animation<double>? scaleAnimation;
+  final Function? menuOpen;
   const Profile(
-      {Key key,
+      {Key? key,
       this.isCollapsed,
       this.duration,
       this.scaleAnimation,
@@ -26,16 +26,16 @@ class Profile extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     screenWidth = size.width;
     return AnimatedPositioned(
-      duration: duration,
+      duration: duration!,
       top: 0,
       bottom: 0,
-      left: isCollapsed ? 0 : 0.45 * screenWidth,
-      right: isCollapsed ? 0 : -0.55 * screenWidth,
+      left: isCollapsed! ? 0 : 0.45 * screenWidth,
+      right: isCollapsed! ? 0 : -0.55 * screenWidth,
       child: ScaleTransition(
-        scale: scaleAnimation,
+        scale: scaleAnimation!,
         child: Material(
-          animationDuration: duration,
-          borderRadius: isCollapsed ? null : BorderRadius.circular(20),
+          animationDuration: duration!,
+          borderRadius: isCollapsed! ? null : BorderRadius.circular(20),
           elevation: 8,
           color: Color(0xffF6F6F9),
           child: BlocProvider(
@@ -49,31 +49,33 @@ class Profile extends StatelessWidget {
                     menuOpen: menuOpen,
                   ),
                   BlocBuilder<ProfileCubit, ProfileState>(
-                      builder: (context, state) {
-                    if (state is ProfileLoadingState) {
-                      return Expanded(
-                        child: Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                      );
-                    } else if (state is ProfileErrorState) {
-                      DialogPlatformCtrl(
-                        title: 'Error',
-                        myContent: Text(state.message),
-                        context: context,
-                        yesButton: 'OK',
-                        yesButtonFun: () {
-                          Navigator.of(context).pop();
-                        },
-                      ).platformCtrlDialog();
-                      return Expanded(child: Container());
-                    } else if (state is ProfileLoadedState) {
-                      return Expanded(
-                          child: state.token == ''
-                              ? ProfileNull()
-                              : ProfileNotNull(data: state.model));
-                    }
-                  }),
+                    builder: (context, state) {
+                      if (state is ProfileLoadingState) {
+                        return Expanded(
+                          child: Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        );
+                      } else if (state is ProfileErrorState) {
+                        DialogPlatformCtrl(
+                          title: 'Error',
+                          myContent: Text(state.message),
+                          context: context,
+                          yesButton: 'OK',
+                          yesButtonFun: () {
+                            Navigator.of(context).pop();
+                          },
+                        ).platformCtrlDialog();
+                        return Expanded(child: Container());
+                      } else if (state is ProfileLoadedState) {
+                        return Expanded(
+                            child: state.token == ''
+                                ? ProfileNull()
+                                : ProfileNotNull(data: state.model!));
+                      }
+                      return SizedBox.shrink();
+                    },
+                  ),
                   HomeBottomNavBar(),
                 ],
               ),

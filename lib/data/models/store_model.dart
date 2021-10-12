@@ -10,14 +10,14 @@ class StoreModel {
     this.contact,
   });
 
-  String storeName;
-  String catagory;
-  String image;
-  String coverImage;
-  Product product;
-  Follower follower;
-  int rating;
-  Contact contact;
+  String? storeName;
+  String? catagory;
+  String? image;
+  String? coverImage;
+  Product? product;
+  Follower? follower;
+  int? rating;
+  Contact? contact;
 
   factory StoreModel.fromJson(Map<String, dynamic> json) => StoreModel(
         storeName: json["storeName"],
@@ -41,12 +41,12 @@ class Contact {
     this.internetAdress,
   });
 
-  String aboutStore;
-  String tel;
-  String email;
-  String latlng;
-  String adress;
-  InternetAdress internetAdress;
+  String? aboutStore;
+  String? tel;
+  String? email;
+  String? latlng;
+  String? adress;
+  InternetAdress? internetAdress;
 
   factory Contact.fromJson(Map<String, dynamic> json) => Contact(
         aboutStore: json["aboutStore"],
@@ -66,10 +66,10 @@ class InternetAdress {
     this.whatsapp,
   });
 
-  String facebook;
-  String instagram;
-  String twitter;
-  String whatsapp;
+  String? facebook;
+  String? instagram;
+  String? twitter;
+  String? whatsapp;
 
   factory InternetAdress.fromJson(Map<String, dynamic> json) => InternetAdress(
         facebook: json["facebook"],
@@ -84,7 +84,7 @@ class Follower {
     this.followers,
   });
 
-  List<dynamic> followers;
+  List<dynamic>? followers;
 
   factory Follower.fromJson(Map<String, dynamic> json) =>
       Follower(followers: json["followers"]);
@@ -95,7 +95,7 @@ class Product {
     this.products,
   });
 
-  List<dynamic> products;
+  List<dynamic>? products;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         products: json["products"],

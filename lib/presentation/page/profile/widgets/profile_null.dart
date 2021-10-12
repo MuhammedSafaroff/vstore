@@ -3,7 +3,7 @@ import '../../sing_in_up/sign_in.dart';
 import '../../../../core/constants/statics.dart';
 
 class ProfileNull extends StatelessWidget {
-  const ProfileNull({Key key}) : super(key: key);
+  const ProfileNull({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
