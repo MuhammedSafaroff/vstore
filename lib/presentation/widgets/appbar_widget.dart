@@ -24,7 +24,7 @@ class MyAppBar extends StatelessWidget {
             FontAwesomeIcons.bars,
             color: backgroundColor,
           ),
-          onPressed:()=> menuOpen!()),
+          onPressed: () => menuOpen!()),
       title: Text(
         "Vstore",
         style: TextStyle(

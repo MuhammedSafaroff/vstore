@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vstore_appl/presentation/widgets/page_structure.dart';
 import '../../../presentation/bloc/menu_selected_cubit/menu_selected_state.dart';
 
 import '../../../presentation/bloc/menu_selected_cubit/menu_selected_cubit.dart';
@@ -53,19 +54,23 @@ class _MenuDashboardLayoutState extends State<MenuDashboardLayout>
                 slideAnimation: _slideAnimation,
                 menuOpen: menuOpen),
             BlocBuilder<MenuSelectedCubit, MenuSelectedState>(
-                builder: (context, state) {
-              if (state is MenuSelectedState) {
-                final menuSelectedCubit =
-                    BlocProvider.of<MenuSelectedCubit>(context);
-                return menuSelectedCubit.menuSelected(
-                  isCollapsed: isCollapsed,
-                  duration: duration,
-                  scaleAnimation: _scaleAnimation,
-                  menuOpen: menuOpen,
-                )!;
-
-              }return SizedBox.shrink();
-            },),
+              builder: (context, state) {
+                if (state is MenuSelectedState) {
+                  final menuSelectedCubit =
+                      BlocProvider.of<MenuSelectedCubit>(context);
+                  return PageStructure(
+                    isCollapsed: isCollapsed,
+                    duration: duration,
+                    scaleAnimation: _scaleAnimation,
+                    menuOpen: menuOpen,
+                    widget: menuSelectedCubit.menuSelected(
+                      isCollapsed: isCollapsed,
+                    )!,
+                  );
+                }
+                return SizedBox.shrink();
+              },
+            ),
           ],
         ),
       ),

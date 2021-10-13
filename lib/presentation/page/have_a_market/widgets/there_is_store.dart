@@ -19,7 +19,8 @@ class _ThereIsStoreState extends State<ThereIsStore> {
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
+    MediaQueryData data = MediaQuery.of(context);
+    screenWidth = data.size.width;
     return LayoutBuilder(builder: (context, constraints) {
       return DefaultTabController(
         length: 2,
@@ -283,14 +284,17 @@ class _ThereIsStoreState extends State<ThereIsStore> {
                           //product items
                           return HomeProductItem(
                             index: index,
-                            isCollapsed: true,
                           );
                         },
                         childCount: 8,
                       ),
                       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                         maxCrossAxisExtent: constraints.maxWidth / 2,
-                        mainAxisExtent: 240,
+                        mainAxisExtent: (constraints.maxHeight -
+                                data.padding.top -
+                                AppBar().preferredSize.height * 2 -
+                                12) /
+                            2.2,
                         mainAxisSpacing: 8.0,
                         crossAxisSpacing: 8.0,
                       ),

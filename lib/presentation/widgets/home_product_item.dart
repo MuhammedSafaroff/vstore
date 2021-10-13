@@ -3,9 +3,8 @@ import 'package:vstore_appl/data/my_list.dart';
 import 'package:vstore_appl/core/constants/statics.dart';
 
 class HomeProductItem extends StatelessWidget {
-  HomeProductItem({Key? key, this.index, this.isCollapsed}) : super(key: key);
+  HomeProductItem({Key? key, this.index}) : super(key: key);
   final int? index;
-  final bool? isCollapsed;
   final ValueNotifier<bool> favorite = ValueNotifier<bool>(false);
 
   @override
@@ -90,20 +89,19 @@ class HomeProductItem extends StatelessWidget {
             top: 14,
             right: 14,
             child: ValueListenableBuilder<bool>(
-              valueListenable: favorite,
-              builder: (context, value,c) {
-                return InkWell(
-                  child: Icon(
-                   value?Icons.favorite: Icons.favorite_border,
-                    size: 28,
-                    color: backgroundColor,
-                  ),
-                  onTap: () {
-                    favorite.value=!favorite.value;
-                  },
-                );
-              }
-            ),
+                valueListenable: favorite,
+                builder: (context, value, c) {
+                  return InkWell(
+                    child: Icon(
+                      value ? Icons.favorite : Icons.favorite_border,
+                      size: 28,
+                      color: backgroundColor,
+                    ),
+                    onTap: () {
+                      favorite.value = !favorite.value;
+                    },
+                  );
+                }),
           ),
         ],
       ),

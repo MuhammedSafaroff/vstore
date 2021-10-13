@@ -8,14 +8,22 @@ import 'package:vstore_appl/presentation/page/have_a_market/widgets/dropdown_fie
 import 'package:vstore_appl/presentation/widgets/widget.dart';
 
 class StoreCreatePage extends StatelessWidget {
-  StoreCreatePage({Key? key, this.buildContext}) : super(key: key);
-  final List<String> items =
-      'Elektronika,Şəxsi əşyalar,Nəqliyyat,Heyvanlar,idman və əyləncə,Uşaq dünyası,Ev və bağ,Təhsil və ofis ləvazimatları,Alətlər və xırdavat'
-          .split(',');
+  StoreCreatePage({Key? key}) : super(key: key);
+  final List<String> items = [
+    'Elektronika',
+    'Şəxsi əşyalar',
+    'Nəqliyyat',
+    'Heyvanlar',
+    'idman və əyləncə',
+    'Uşaq dünyası',
+    'Ev və bağ',
+    'Təhsil və ofis ləvazimatları',
+    'Alətlər və xırdavat'
+  ];
+
   final _formKey = GlobalKey<FormState>();
-  final ValueNotifier<String> unitController = ValueNotifier<String>('');
+  final ValueNotifier<String> unitController = ValueNotifier<String>('saam');
   final TextEditingController nameController = TextEditingController();
-  final BuildContext? buildContext;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,8 +69,9 @@ class StoreCreatePage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate())
-                        MyFireBaseStore.addStore(
-                            nameController.text, unitController.value, context);
+                        print(unitController.value);
+                      MyFireBaseStore.addStore(
+                          nameController.text, unitController.value, context);
                       context.read<ProfileCubit>().pullToken();
                       Navigator.pop(context);
                     },

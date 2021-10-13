@@ -8,7 +8,6 @@ import 'package:vstore_appl/presentation/page/profile/profile.dart';
 
 import 'menu_selected_state.dart';
 
-
 class MenuSelectedCubit extends Cubit<MenuSelectedState> {
   MenuSelectedCubit(MenuSelectedState state) : super(state);
   // var value;
@@ -24,50 +23,22 @@ class MenuSelectedCubit extends Cubit<MenuSelectedState> {
   //   value = v;
   // }
 
-  Widget? menuSelected(
-      {bool? isCollapsed,
-      Duration? duration,
-      Animation<double>? scaleAnimation,
-      Function? menuOpen,
-      var value}) {
+  Widget? menuSelected({
+    bool? isCollapsed,
+  }) {
     switch (state.key) {
       case "homepage":
         return MyHomePage(
           isCollapsed: isCollapsed!,
-          duration: duration!,
-          scaleAnimation: scaleAnimation!,
-          menuOpen: menuOpen!,
         );
       case "do_u_have_a_market":
-        return HaveAMaket(
-          isCollapsed: isCollapsed!,
-          duration: duration!,
-          scaleAnimation: scaleAnimation!,
-          menuOpen: menuOpen!,
-          // haveAStore: value,
-        );
-        case "favorite":
-        return FavoritePage(
-          isCollapsed: isCollapsed!,
-          duration: duration!,
-          scaleAnimation: scaleAnimation!,
-          menuOpen: menuOpen!,
-          // haveAStore: value,
-        );
+        return HaveAMaket();
+      case "favorite":
+        return FavoritePage();
       case "markets":
-        return Markets(
-          isCollapsed: isCollapsed!,
-          duration: duration!,
-          scaleAnimation: scaleAnimation!,
-          menuOpen: menuOpen!,
-        );
+        return Markets();
       case "profile":
-        return Profile(
-          isCollapsed: isCollapsed!,
-          duration: duration!,
-          scaleAnimation: scaleAnimation!,
-          menuOpen: menuOpen!,
-        );
+        return Profile();
     }
   }
 }
