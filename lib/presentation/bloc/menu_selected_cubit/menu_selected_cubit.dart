@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vstore_appl/presentation/page/favorite_page/favorite_page.dart';
 import 'package:vstore_appl/presentation/page/have_a_market/have_a_market.dart';
 import 'package:vstore_appl/presentation/page/home/homepage.dart';
 import 'package:vstore_appl/presentation/page/markets/markets.dart';
@@ -39,6 +40,14 @@ class MenuSelectedCubit extends Cubit<MenuSelectedState> {
         );
       case "do_u_have_a_market":
         return HaveAMaket(
+          isCollapsed: isCollapsed!,
+          duration: duration!,
+          scaleAnimation: scaleAnimation!,
+          menuOpen: menuOpen!,
+          // haveAStore: value,
+        );
+        case "favorite":
+        return FavoritePage(
           isCollapsed: isCollapsed!,
           duration: duration!,
           scaleAnimation: scaleAnimation!,

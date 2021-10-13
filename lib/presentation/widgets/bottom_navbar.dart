@@ -58,6 +58,9 @@ class HomeBottomNavBar extends StatelessWidget {
                 menuSelectedCubit.setNavItemIndexName(index, 'homepage');
 
                 break;
+              case 2:
+                menuSelectedCubit.setNavItemIndexName(index, 'favorite');
+                break;
               case 3:
                 menuSelectedCubit.setNavItemIndexName(index, 'profile');
 
